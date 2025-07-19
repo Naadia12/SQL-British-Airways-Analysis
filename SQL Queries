@@ -1,0 +1,30 @@
+1. Top 5 Routes with Highest Average Ratings
+SELECT route, AVG(rating) AS avg_rating, COUNT(*) AS review_count
+FROM ba_reviews
+GROUP BY route
+ORDER BY avg_rating DESC
+LIMIT 5;
+
+2. Average Value for Money by Traveller Type
+SELECT traveller_type, AVG('value for money') AS avg_value_rating, COUNT(*) AS review_count
+FROM ba_reviews
+GROUP BY traveller_type
+ORDER BY avg_value_rating DESC;
+
+ 3. Average Rating by Aircraft Type
+SELECT aircraft, AVG(rating) AS avg_rating, COUNT(*) AS review_count
+FROM ba_reviews
+GROUP BY aircraft
+ORDER BY avg_rating DESC;
+
+4. Average Rating by Country
+SELECT place, AVG(rating) AS avg_rating, COUNT(*) AS review_count
+FROM ba_reviews
+GROUP BY place
+ORDER BY avg_rating DESC
+LIMIT 10;
+
+ 5. Number of Reviews by Traveller Type
+SELECT traveller_type, COUNT(*) AS total_reviews
+FROM ba_reviews
+GROUP BY traveller_type
